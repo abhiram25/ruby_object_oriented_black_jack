@@ -36,6 +36,8 @@ class Player
 
   private
 
+  attr_reader :card
+
   def ace?
     cards.each do |card|
       return true if card[1] == "Ace"
@@ -144,6 +146,8 @@ class Game
       player_turn
       dealer_turn
       show_result
+      display_series_score
+      break if series_winner?
       break unless play_again?
     end
     puts "Thank you for playing. Goodbye!"
@@ -306,4 +310,6 @@ class Game
   end
 end
 
-Game.new.start
+game = Game.new
+
+game.start
