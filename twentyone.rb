@@ -273,7 +273,7 @@ class Game
     dealer.score == 5
   end
 
-  def someone_won_the_series
+  def someone_won_the_series?
     human.score == 5 || dealer.score == 5
   end
 
@@ -283,7 +283,7 @@ class Game
     elsif dealer_wins_series?
       puts "Dealer wins series"
     end
-    someone_won_the_series
+    someone_won_the_series?
   end
 
   def show_result
